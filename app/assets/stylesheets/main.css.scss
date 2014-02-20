@@ -1,0 +1,79 @@
+@import "../../../vendor/assets/stylesheets/bootstrap/bootstrap.scss";
+/*Universal*/
+.center{
+	@include center-block;
+}
+body {
+  padding-top: 30px;
+  background-image: url(bg_dotted.png);
+}
+
+/* typography */
+
+h1, h2, h3, h4, h5, h6 {
+  line-height: 1;
+}
+
+h1 {
+  font-size: 3em;
+  letter-spacing: -2px;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+h2 {
+  font-size: 1.2em;
+  letter-spacing: -1px;
+  margin-bottom: 30px;
+  text-align: center;
+  font-weight: normal;
+  color: #999;
+}
+
+p {
+  font-size: 1.1em;
+  line-height: 1.7em;
+}
+
+/* header */
+
+#logo {
+  color: #fff;
+  margin-bottom: 10px;
+  display: block;
+  @include center-block;	
+  &:hover {
+    color: #000;
+    text-decoration: none;
+  }
+}
+
+/* footer */
+
+footer {
+  background-image: url(footer_bg.png);
+  min-height: 58px;
+  margin-top: 45px;
+  margin-bottom: 0px;
+  padding: 15px;
+  border-top: 1px solid #eaeaea;
+  a {
+    color: #555;
+    &:hover {
+      color: #fff;
+    }
+  }
+  small {
+    float: left;
+  }
+  ul {
+    float: right;
+    list-style: none;
+    @include text-overflow;
+    li {
+      float: left;
+      margin-left: 10px;
+      display: inline-block;
+    }
+  }
+}

@@ -1,10 +1,10 @@
 class StaticPagesController < ApplicationController
-  def Inicio
+  def inicio
   end
 
-  def Lecciones
+  def lecciones
   end
 
-  def Contacto
+  def contacto
   end
 end

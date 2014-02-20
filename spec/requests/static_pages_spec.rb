@@ -3,46 +3,31 @@ require 'spec_helper'
 describe "Static Pages" do
   
   let(:base_title) { "SODMI |" }
+  subject{ page }
 
   describe "Pagina de Inicio" do
-    it "Deberia tener el contenido 'SODMI'" do
-      visit '/static_pages/Inicio'
-      expect(page).to have_content('SODMI')
-    end
-
-    it "Deberia tener el titulo correcto" do
-    	visit '/static_pages/Inicio'
-    	expect(page).to have_title("SODMI")
-    end
-
-    it "No deberia tener el titulo personalizado" do
-    	visit '/static_pages/Inicio'
-    	expect(page).not_to have_title('| Inicio')
-    end
+    before{ visit root_path }
+    
+    it { should have_content('REGISTRATE!') }
+    it { should have_title(full_title('')) }  
+    it { should_not have_title('| Inicio') }
+  
   end
 
   describe "Pagina de Contacto" do
-    it "Deberia tener el contenido 'SODMI'" do
-      visit '/static_pages/Contacto'
-      expect(page).to have_content('Contacto')
-    end
+    before{ visit contacto_path }
+    
+    it{ should have_content('Contacto') }
+    it{ should have_title(full_title('Contacto')) }
 
-    it "Deberia tener el titulo correcto" do
-    	visit '/static_pages/Contacto'
-    	expect(page).to have_title("#{base_title} Contacto")
-    end
   end
 
   describe "Pagina de Inicio" do
-    it "Deberia tener el contenido 'SODMI'" do
-      visit '/static_pages/Lecciones'
-      expect(page).to have_content('Lecciones')
-    end
+    before{ visit lecciones_path }
 
-    it "Deberia tener el titulo correcto" do
-    	visit '/static_pages/Lecciones'
-    	expect(page).to have_title("#{base_title} Lecciones")
-    end
+    it{ should have_content('Lecciones') }
+    it{ should have_title(full_title('Lecciones')) }
+
   end
   
 end
