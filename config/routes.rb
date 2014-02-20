@@ -1,6 +1,9 @@
 EngineWrapper::Application.routes.draw do
-  get "static_pages/Inicio"
-  get "static_pages/Lecciones"
-  get "static_pages/Contacto"
-  root 'static_pages#Inicio'
+  get "usuarios/new"
+  root 'static_pages#inicio'
+	match '/', to:'static_pages#inicio', via:'get'
+  match '/lecciones', to:'static_pages#lecciones', via:'get'
+  match '/contacto', to:'static_pages#contacto', via:'get'
+  match '/ingresar',to:'usuarios#new', via:'get'
+  
 end

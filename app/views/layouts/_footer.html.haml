@@ -1,0 +1,12 @@
+.navbar.navbar-fixed-bottom
+	.navbar-inner
+		.container
+			%footer.footer
+				%small 
+					by Instituto Tecnologico de ciudad Guzman
+				%nav
+					%ul
+						%li.active= link_to "Inicio",root_path
+						%li= link_to "Lecciones",lecciones_path
+						%li= link_to "Contacto", contacto_path
+						%li= link_to "Ingresar", usuarios_new_path
