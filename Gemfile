@@ -3,7 +3,7 @@ ruby '2.0.0'
 #ruby-gemset=engine_Wrapper_rails_4_0
 
 gem 'rails', '4.0.2'
-
+gem 'bcrypt-ruby', '3.1.2'
 
 gem 'sass-rails', '4.0.1'
 

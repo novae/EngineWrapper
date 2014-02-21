@@ -1,9 +1,11 @@
 = provide(:title,"Ingresa!")
 .container
 	%form.form-signin
-		%h2.form-signin-heading Registrate! 
-		%input.form-control{autofocus: "", placeholder: "Correo electronico", required: "", type: "text"}/
+		%h2.form-signin-heading REGISTRATE! 
+		%input.form-control{autofocus: "", placeholder: "Nombre", required: "", type: "text"}/
+		%input.form-control{placeholder: "Correo electronico", required: "", type: "text"}/
 		%input.form-control{placeholder: "Contraseña", required: "", type: "password"}/
+		%input.form-control{placeholder: "Confirmar contraseña", required: "", type: "password"}/
 		%label.checkbox
 			%input{type: "checkbox", value: "remember-me"}/
 			Recordarme
