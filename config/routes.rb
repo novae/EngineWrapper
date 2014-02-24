@@ -1,5 +1,5 @@
 EngineWrapper::Application.routes.draw do
-  get "usuarios/new"
+  resources :usuarios
   root 'static_pages#inicio'
 	match '/', to:'static_pages#inicio', via:'get'
   match '/lecciones', to:'static_pages#lecciones', via:'get'

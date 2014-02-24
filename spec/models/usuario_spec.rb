@@ -69,6 +69,16 @@ describe Usuario do
 		it { should_not be_valid }
 	end
 
+	describe "Cuando una direccion de correo electronico tiene mayusculas y minusculas" do 
+		let(:mixed_case_email) {"NoVaEgr@GmAil.COm"}
+
+		it "deberia ser guardado en minusculas" do
+			@usuario.email = mixed_case_email
+			@usuario.save
+			expect(@usuario.reload.email).to eq mixed_case_email.downcase
+		end
+	end
+
 	describe "cuando el password no ha sido proporcionado" do
 		before do
 			@usuario = Usuario.new(nombre:"jc", email:"jc@ejemplo.com",
