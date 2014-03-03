@@ -10,7 +10,22 @@
 		.navbar-collapse.collapse{style: "height: 1px;"}
 			%ul.nav.navbar-nav.navbar-right
 				%li.active= link_to "Inicio",root_path
-				%li= link_to "Lecciones",lecciones_path
 				%li= link_to "Contacto", contacto_path
-				%li= link_to "Ingresar", ingresar_path
+				%li= link_to "Lecciones",lecciones_path
+				- if signed_in?
+					%li= link_to "Users", '#'
+					%li#fat-menu.dropdown
+						%a.dropdown-toggle{"data-toggle" => "dropdown", href: "#"}
+							Cuenta
+							%b.caret
+						%ul.dropdown-menu
+							%li= link_to "Perfil", current_user
+							%li= link_to "Configuracion", '#'
+							%li.divider
+							%li
+								= link_to "Salir", salir_path, method: "delete"
+				- else
+					%li= link_to "Entrar", entrar_path
+
+
 					
