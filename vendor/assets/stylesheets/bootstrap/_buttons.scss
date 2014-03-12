@@ -9,7 +9,8 @@
 // Core styles
 .btn {
   display: inline-block;
-  margin-bottom: 0; // For input.btn
+  margin-bottom: 4px; // For input.btn
+  
   font-weight: $btn-font-weight;
   text-align: center;
   vertical-align: middle;

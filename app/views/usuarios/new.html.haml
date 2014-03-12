@@ -1,12 +1,14 @@
 = provide(:title,"Registrate!")
-.container	
-	%h2.form-signin-heading REGISTRATE!
-	= form_for @usuario, html:{class:"form-signin"} do |f|
-		= render 'shared/error_messages'
-		= f.text_field :nombre, 	class:"form-control", placeholder:"nombre"
-		= f.text_field :email, class:"form-control", placeholder:"email"
-		= f.password_field :password, class:"form-control", placeholder:"password"
-		= f.password_field :password_confirmation, class:"form-control", placeholder:"password_confirmation"
-		= f.submit "Crear", class:"btn btn-lg btn-primary btn-block"
+.row
+	.col-md-4
+	.col-md-4	
+		%h2.form-signin-heading REGISTRATE!
+		= form_for @usuario, html:{class:"form-signin"} do |f|
+			= render 'shared/error_messages'
+			= f.text_field :nombre, 					class:"form-control", placeholder:"nombre"
+			= f.text_field :email, 						class:"form-control", placeholder:"email"
+			= f.password_field :password, 				class:"form-control", placeholder:"password"
+			= f.password_field :password_confirmation, 	class:"form-control", placeholder:"password_confirmation"
+			= f.submit "Crear", 						class:"btn btn-lg btn-primary btn-block"
 
 		

@@ -45,8 +45,6 @@ describe "Static Pages" do
     visit root_path
     click_link "Inicio"
     expect(page).to have_title(full_title(''))
-    click_link "Lecciones"
-    expect(page).to have_title(full_title('Lecciones'))
     click_link "Contacto"
     expect(page).to have_title(full_title('Contacto'))
   end

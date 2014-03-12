@@ -12,14 +12,13 @@ class Usuario < ActiveRecord::Base
     SecureRandom.urlsafe_base64
   end
 
-  def Usuario.encrypt(token)
-    Digest::SHA1.hexdigest(token.to_s)
-  end
+  def Usuario.hash(token)
+    	Digest::SHA1.hexdigest(token.to_s) 
+  	end
 
-  private
-
-    def create_remember_token
-      self.remember_token = Usuario.encrypt(Usuario.new_remember_token)
-    end
+  	private
+			def create_remember_token
+      		self.remember_token = Usuario.hash(Usuario.new_remember_token)
+    	end
 
 end

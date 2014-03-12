@@ -1,0 +1,10 @@
+- provide(:title,"Usuarios")
+%h1 Usuarios
+
+= will_paginate
+%ul.usuario
+  - @usuarios.each do |usuario|
+    %li
+      = gravatar_for usuario, size: 52
+      = link_to usuario.nombre, usuario
+= will_paginate
